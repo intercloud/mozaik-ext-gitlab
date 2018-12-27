@@ -49,6 +49,12 @@ const client = mozaik => {
                 builds:  buildApiRequest(`/projects/${encodeURIComponent(project)}/builds`).then(res => res.body)
             });
         },
+        projectPipelines({ project }) {
+            return Promise.props({
+                project: operations.project({ project }),
+                builds:  buildApiRequest(`/projects/${encodeURIComponent(project)}/pipelines`).then(res => res.body)
+            });
+        },
         projectBranches({ project }) {
             return Promise.props({
                 project:  operations.project({ project }),
