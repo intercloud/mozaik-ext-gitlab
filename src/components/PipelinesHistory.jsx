@@ -37,7 +37,7 @@ class PipelinesHistory extends Component {
                     <i className="fa fa-bars" />
                 </div>
                 <div className="widget__body">
-                    {JSON.parse(pipelines)}
+                    {JSON.stringify(pipelines)}
                 </div>
             </div>
         );
