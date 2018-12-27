@@ -38,6 +38,7 @@ class PipelinesHistory extends Component {
                 </div>
                 <div className="widget__body">
                     {JSON.stringify(pipelines)}
+                    {pipelines[0].status}
                 </div>
             </div>
         );
