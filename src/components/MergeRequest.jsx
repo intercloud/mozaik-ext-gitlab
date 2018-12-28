@@ -7,7 +7,7 @@ class MergeRequestItem extends Component {
         const { mergerRequest } = this.props;
 
 
-        const cssClasses = `list__item list__item--with-status list__item--with-status--${mergerRequest.status}`;
+        const cssClasses = `list__item`;
 
         return (
             <div className={cssClasses}>
