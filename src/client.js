@@ -77,7 +77,7 @@ const client = (mozaik) => {
 			return Promise.props({
 				mergeRequests: Promise.all(reqs).then((data) => {
 					console.log(data);
-					return data;
+					return data.map((item) => item.body);
 				})
 			});
 		}
