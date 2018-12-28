@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import reactMixin                      from 'react-mixin';
 import { ListenerMixin }               from 'reflux';
 import Mozaik                          from 'mozaik/browser';
+import MergeRequestItem                          from './MergeRequest';
 
 
 class MergeRequests extends Component {
@@ -45,7 +46,7 @@ class MergeRequests extends Component {
                     <i className="fa fa-code-fork" />
                 </div>
                 <div className="widget__body">
-                    {mergeRequests.map(mr => (<div>{mr.title}</div>))}
+                    {mergeRequests.map(mr => (<MergeRequestItem mergeRequests={mergeRequests}/>))}
                 </div>
             </div>
         );
