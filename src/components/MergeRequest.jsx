@@ -12,25 +12,25 @@ class MergeRequestItem extends Component {
         return (
             <div className={cssClasses}>
                 <a href={`${''}/builds/${mergeRequest.id}`} target="_blank">
-                    #{mergeRequest.id}
+                    #{mergeRequest.title}
                 </a>
+                <br />
+
                 <span className="label__group">
-                    <span className="label__addon">title</span>
-                    <span className="label">{mergeRequest.title}</span>
+                    <span className="label__addon">by</span>
+                        <span className="label">{mergeRequest.author[0].name}</span>
                 </span>
                 <span className="label__group">
                     <span className="label__addon">upvotes</span>
                     <span className="label">{mergeRequest.upvotes}</span>
                 </span>
                 &nbsp;
-                <span className="travis__build-history__item__message">{mergeRequest.upvotes}</span>
                 <br />
-                {mergeRequest.created_at && (
-                    <time className="list__item__time">
+                <time className="list__item__time">
                         <i className="fa fa-clock-o" />&nbsp;
-                        {moment(mergeRequest.created_at).fromNow()}
-                    </time>
-                )}
+                        {mergeRequest.updated_at}
+                        </time>
+
             </div>
         );
     }
