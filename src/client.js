@@ -68,14 +68,17 @@ const client = (mozaik) => {
 			});
 		},
 		projectstMergeRequests({ projects }) {
-			console.log(projects)
+			console.log(projects);
 			const reqs = projects.map((project) => {
-				return operations.projectMergeRequests(project);
+				return buildApiRequest(`/projects/${encodeURIComponent(project)}/merge_requests`, query);
 			});
 
-			console.log(reqs)
+			console.log(reqs);
 			return Promise.props({
-				mergeRequests: reqs
+				mergeRequests: reqs.then((data) => {
+					console.log(data);
+					return data;
+				})
 			});
 		}
 	};
