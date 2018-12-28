@@ -70,12 +70,12 @@ const client = (mozaik) => {
 		projectstMergeRequests({ projects }) {
 			console.log(projects);
 			const reqs = projects.map((project) => {
-				return buildApiRequest(`/projects/${encodeURIComponent(project)}/merge_requests`, query);
+				return buildApiRequest(`/projects/${encodeURIComponent(project)}/merge_requests`);
 			});
 
-			console.log(reqs);
+			// console.log(reqs);
 			return Promise.props({
-				mergeRequests: reqs.then((data) => {
+				mergeRequests: Promise.all(reqs).then((data) => {
 					console.log(data);
 					return data;
 				})
