@@ -47,7 +47,7 @@ class MergeRequests extends Component {
                     <i className="fa fa-code-fork" />
                 </div>
                 <div className="widget__body">
-                    {mergeRequests.map(mr => (<MergeRequestItem mergeRequests={mergeRequests}/>))}
+                    {mergeRequests.map(mr => (<MergeRequestItem mergeRequests={mr}/>))}
                 </div>
             </div>
         );
