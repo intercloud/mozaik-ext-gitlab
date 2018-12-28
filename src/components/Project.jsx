@@ -21,7 +21,6 @@ class Project extends Component {
     }
 
     onApiData(project) {
-        //console.log(project);
         this.setState({ project });
     }
 

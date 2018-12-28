@@ -53,7 +53,6 @@ const client = mozaik => {
             return Promise.props({
                 project: operations.project({ project }),
                 pipelines:  buildApiRequest(`/projects/${encodeURIComponent(project)}/pipelines`).then(res => {
-                    console.log(res.body)
                     return res.body
                 })
             });

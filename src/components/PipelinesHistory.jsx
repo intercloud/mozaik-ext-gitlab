@@ -25,13 +25,11 @@ class PipelinesHistory extends Component {
 
 	onApiData(data) {
 		const { project, pipelines } = data;
-		console.log(data);
 		this.setState({ project, pipelines });
 	}
 
 	render() {
 		const { project, pipelines } = this.state;
-		console.log(pipelines);
 
 		return (
 			<div>

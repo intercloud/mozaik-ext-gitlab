@@ -1,11 +1,7 @@
 import React, { Component, PropTypes } from 'react';
-import moment from 'moment';
-
 class PipelineHistoryItem extends Component {
 	render() {
 		const { project, pipeline } = this.props;
-
-		console.log(pipeline);
 
 		const cssClasses = `list__item list__item--with-status list__item--with-status--${pipeline.status}`;
 
