@@ -68,6 +68,7 @@ const client = (mozaik) => {
 			});
 		},
 		projectstMergeRequests({ projects }) {
+			console.log(projects)
 			const reqs = projects.map((project) => {
 				return operations.projectMergeRequests(project);
 			});

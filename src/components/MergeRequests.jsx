@@ -9,7 +9,8 @@ class MergeRequests extends Component {
         super(props);
 
         this.state = {
-            mergeRequests:  []
+            mergeRequests:  [],
+            projects:  []
         };
     }
 
