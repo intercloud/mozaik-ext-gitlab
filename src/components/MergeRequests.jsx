@@ -17,6 +17,8 @@ class MergeRequests extends Component {
     getApiRequest() {
         const { projects } = this.props;
 
+        console.log(projects)
+
         return {
             id:     `gitlab.projectstMergeRequests.${ projects }`,
             params: { projects }

@@ -72,11 +72,10 @@ const client = (mozaik) => {
 			const reqs = projects.map((project) => {
 				return operations.projectMergeRequests(project);
 			});
+
+			console.log(reqs)
 			return Promise.props({
-				mergeRequests: reqs.then(data => {
-                    console.log(data);
-                    return data
-                })
+				mergeRequests: reqs
 			});
 		}
 	};
