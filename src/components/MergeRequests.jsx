@@ -22,12 +22,12 @@ class MergeRequests extends Component {
         };
     }
 
-    onApiData({ project, mergeRequests }) {
-        this.setState({ project, mergeRequests });
+    onApiData({ projects, mergeRequests }) {
+        this.setState({ projects, mergeRequests });
     }
 
     render() {
-        const { project, mergeRequests } = this.state;
+        const { projects, mergeRequests } = this.state;
 
         return (
             <div>
@@ -47,7 +47,7 @@ class MergeRequests extends Component {
 }
 
 MergeRequests.propTypes = {
-    project: PropTypes.oneOfType([
+    projects: PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.number
     ]).isRequired

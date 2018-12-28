@@ -72,9 +72,9 @@ const client = (mozaik) => {
 				return operations.projectMergeRequests(project);
 			});
 			return Promise.props({
-				project: operations.project({ project, state: 'opened'} ),
 				mergeRequests: reqs.then(data => {
-                    console.log(data)
+                    console.log(data);
+                    return data
                 })
 			});
 		}
