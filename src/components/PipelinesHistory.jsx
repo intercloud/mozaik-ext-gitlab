@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import reactMixin from 'react-mixin';
 import { ListenerMixin } from 'reflux';
 import Mozaik from 'mozaik/browser';
-import PipelineHistoryItem from './BuildHistoryItem.jsx';
+import PipelineHistoryItem from './PipelineHistoryItem.jsx';
 
 class PipelinesHistory extends Component {
 	constructor(props) {
