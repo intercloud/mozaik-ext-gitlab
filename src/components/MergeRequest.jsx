@@ -4,31 +4,31 @@ import moment                          from 'moment';
 
 class MergeRequestItem extends Component {
     render() {
-        const { mergerRequest } = this.props;
-
+        const { mergeRequest } = this.props;
+        console.log(mergeRequest)
 
         const cssClasses = `list__item`;
 
         return (
             <div className={cssClasses}>
-                <a href={`${''}/builds/${mergerRequest.id}`} target="_blank">
-                    #{mergerRequest.id}
+                <a href={`${''}/builds/${mergeRequest.id}`} target="_blank">
+                    #{mergeRequest.id}
                 </a>
                 <span className="label__group">
                     <span className="label__addon">title</span>
-                    <span className="label">{mergerRequest.title}</span>
+                    <span className="label">{mergeRequest.title}</span>
                 </span>
                 <span className="label__group">
                     <span className="label__addon">upvotes</span>
-                    <span className="label">{mergerRequest.upvotes}</span>
+                    <span className="label">{mergeRequest.upvotes}</span>
                 </span>
                 &nbsp;
-                <span className="travis__build-history__item__message">{mergerRequest.upvotes}</span>
+                <span className="travis__build-history__item__message">{mergeRequest.upvotes}</span>
                 <br />
-                {mergerRequest.created_at && (
+                {mergeRequest.created_at && (
                     <time className="list__item__time">
                         <i className="fa fa-clock-o" />&nbsp;
-                        {moment(created_at.created_at).fromNow()}
+                        {moment(mergeRequest.created_at).fromNow()}
                     </time>
                 )}
             </div>
