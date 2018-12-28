@@ -26,6 +26,9 @@ class MergeRequests extends Component {
     }
 
     onApiData({ projects, mergeRequests }) {
+        console.log('-----')
+
+        console.log(mergeRequests)
         this.setState({ projects, mergeRequests });
     }
 
