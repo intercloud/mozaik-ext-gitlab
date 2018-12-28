@@ -29,8 +29,9 @@ class MergeRequests extends Component {
     onApiData({ projects, mergeRequests }) {
         console.log('-----')
 
-        console.log(mergeRequests)
-        this.setState({ projects, mergeRequests });
+        console.log(mergeRequests.flat(1))
+        console.log([].concat.apply([], mergeRequests))
+        this.setState({ projects, mergeRequests: [].concat.apply([], mergeRequests) });
     }
 
     render() {
