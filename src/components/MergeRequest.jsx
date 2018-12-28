@@ -18,7 +18,7 @@ class MergeRequestItem extends Component {
 
                 <span className="label__group">
                     <span className="label__addon">by</span>
-                        <span className="label">{mergeRequest.author[0].name}</span>
+                        <span className="label">{mergeRequest.author.name}</span>
                 </span>
                 <span className="label__group">
                     <span className="label__addon">upvotes</span>
