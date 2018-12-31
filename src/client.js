@@ -80,6 +80,18 @@ const client = (mozaik) => {
 					return data.map((item) => item.body);
 				})
 			});
+		},
+		groupMergeRequests({ groups }) {
+			const reqs = groups.map((group) => {
+				return buildApiRequest(`/groups/${encodeURIComponent(group)}/merge_requests`);
+			});
+
+			return Promise.props({
+				mergeRequests: Promise.all(reqs).then((data) => {
+					console.log(data);
+					return data.map((item) => item.body);
+				})
+			});
 		}
 	};
 

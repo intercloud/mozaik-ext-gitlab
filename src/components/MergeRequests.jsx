@@ -11,31 +11,30 @@ class MergeRequests extends Component {
 
         this.state = {
             mergeRequests:  [],
-            projects:  []
+            groups:  []
         };
     }
 
     getApiRequest() {
-        const { projects } = this.props;
+        const { groups } = this.props;
 
-        console.log(projects)
+        console.log(groups)
 
         return {
-            id:     `gitlab.projectstMergeRequests.${ projects }`,
-            params: { projects }
+            id:     `gitlab.groupMergeRequests.${ groups }`,
+            params: { groups }
         };
     }
 
-    onApiData({ projects, mergeRequests }) {
-        console.log('-----')
+    onApiData({ groups, mergeRequests }) {
 
         console.log(mergeRequests.flat(1))
         console.log([].concat.apply([], mergeRequests))
-        this.setState({ projects, mergeRequests: [].concat.apply([], mergeRequests) });
+        this.setState({ groups, mergeRequests: [].concat.apply([], mergeRequests) });
     }
 
     render() {
-        const { projects, mergeRequests } = this.state;
+        const { groups, mergeRequests } = this.state;
 
         return (
             <div>
@@ -55,7 +54,7 @@ class MergeRequests extends Component {
 }
 
 MergeRequests.propTypes = {
-    projects: PropTypes.oneOfType([
+    groups: PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.number
     ]).isRequired
