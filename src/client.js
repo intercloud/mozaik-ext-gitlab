@@ -43,10 +43,10 @@ const client = (mozaik) => {
 				builds: buildApiRequest(`/projects/${encodeURIComponent(project)}/builds`).then((res) => res.body)
 			});
 		},
-		projectPipelines({ project }) {
+		projectPipelines({ project, query={} }) {
 			return Promise.props({
 				project: operations.project({ project }),
-				pipelines: buildApiRequest(`/projects/${encodeURIComponent(project)}/pipelines`).then((res) => {
+				pipelines: buildApiRequest(`/projects/${encodeURIComponent(project)}/pipelines`, query).then((res) => {
 					return res.body;
 				})
 			});

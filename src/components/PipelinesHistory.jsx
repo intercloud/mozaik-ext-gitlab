@@ -15,11 +15,11 @@ class PipelinesHistory extends Component {
 	}
 
 	getApiRequest() {
-		const { project } = this.props;
+		const { project, query } = this.props;
 
 		return {
 			id: `gitlab.projectPipelines.${project}`,
-			params: { project }
+			params: { project, query }
 		};
 	}
 
@@ -38,7 +38,9 @@ class PipelinesHistory extends Component {
 					<i className="fa fa-bars" />
 				</div>
 				<div className="widget__body">
-					{pipelines.map((pipeline) => <PipelineHistoryItem key={pipeline.id} project={project} pipeline={pipeline} />)}
+					{pipelines.map((pipeline) => (
+						<PipelineHistoryItem key={pipeline.id} project={project} pipeline={pipeline} />
+					))}
 				</div>
 			</div>
 		);
