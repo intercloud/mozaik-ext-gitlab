@@ -81,9 +81,9 @@ const client = (mozaik) => {
 				})
 			});
 		},
-		groupMergeRequests({ groups }) {
+		groupMergeRequests({ groups, query={} }) {
 			const reqs = groups.map((group) => {
-				return buildApiRequest(`/groups/${encodeURIComponent(group)}/merge_requests`);
+				return buildApiRequest(`/groups/${encodeURIComponent(group)}/merge_requests`, query);
 			});
 
 			return Promise.props({

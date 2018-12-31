@@ -11,18 +11,19 @@ class MergeRequests extends Component {
 
         this.state = {
             mergeRequests:  [],
-            groups:  []
+            groups:  [],
+            query: {}
         };
     }
 
     getApiRequest() {
-        const { groups } = this.props;
+        const { groups, query } = this.props;
 
-        console.log(groups)
+        console.log(query)
 
         return {
             id:     `gitlab.groupMergeRequests.${ groups }`,
-            params: { groups }
+            params: { groups, query }
         };
     }
 
