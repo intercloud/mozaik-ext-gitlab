@@ -18,5 +18,6 @@ export default {
     BuildHistogram,
     Branches,
     MergeRequests,
-    MergeRequestsGauge
+    MergeRequestsGauge,
+    MergeRequestsGaugeGroups
 };
