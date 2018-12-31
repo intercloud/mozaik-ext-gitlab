@@ -19,7 +19,7 @@ class MergeRequestsGaugeGroups extends Component {
         return {
             id:     `gitlab.groupMergeRequests.${ groups }`,
             params: {
-                project,
+                groups,
                 query: {
                     state: 'opened'
                 }
