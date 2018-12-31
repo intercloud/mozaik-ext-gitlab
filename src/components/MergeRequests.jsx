@@ -19,8 +19,6 @@ class MergeRequests extends Component {
     getApiRequest() {
         const { groups, query } = this.props;
 
-        console.log(query)
-
         return {
             id:     `gitlab.groupMergeRequests.${ groups }`,
             params: { groups, query }
@@ -28,9 +26,6 @@ class MergeRequests extends Component {
     }
 
     onApiData({ groups, mergeRequests }) {
-
-        console.log(mergeRequests.flat(1))
-        console.log([].concat.apply([], mergeRequests))
         this.setState({ groups, mergeRequests: [].concat.apply([], mergeRequests) });
     }
 

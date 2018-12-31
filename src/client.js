@@ -68,7 +68,6 @@ const client = (mozaik) => {
 			});
 		},
 		projectstMergeRequests({ projects }) {
-			console.log(projects);
 			const reqs = projects.map((project) => {
 				return buildApiRequest(`/projects/${encodeURIComponent(project)}/merge_requests`);
 			});
@@ -76,7 +75,6 @@ const client = (mozaik) => {
 			// console.log(reqs);
 			return Promise.props({
 				mergeRequests: Promise.all(reqs).then((data) => {
-					console.log(data);
 					return data.map((item) => item.body);
 				})
 			});
@@ -88,7 +86,6 @@ const client = (mozaik) => {
 
 			return Promise.props({
 				mergeRequests: Promise.all(reqs).then((data) => {
-					console.log(data);
 					return data.map((item) => item.body);
 				})
 			});

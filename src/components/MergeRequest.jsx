@@ -28,7 +28,7 @@ class MergeRequestItem extends Component {
                 <br />
                 <time className="list__item__time">
                         <i className="fa fa-clock-o" />&nbsp;
-                        {mergeRequest.updated_at}
+                        {moment(mergeRequest.updated_at).format('MMMM Do YYYY, h:mm:ss a')}
                         </time>
 
             </div>
