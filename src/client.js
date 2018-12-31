@@ -72,7 +72,6 @@ const client = (mozaik) => {
 				return buildApiRequest(`/projects/${encodeURIComponent(project)}/merge_requests`);
 			});
 
-			// console.log(reqs);
 			return Promise.props({
 				mergeRequests: Promise.all(reqs).then((data) => {
 					return data.map((item) => item.body);

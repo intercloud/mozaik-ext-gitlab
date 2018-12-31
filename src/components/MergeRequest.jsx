@@ -5,7 +5,6 @@ import moment                          from 'moment';
 class MergeRequestItem extends Component {
     render() {
         const { mergeRequest } = this.props;
-        console.log(mergeRequest)
 
         const cssClasses = `list__item`;
 
