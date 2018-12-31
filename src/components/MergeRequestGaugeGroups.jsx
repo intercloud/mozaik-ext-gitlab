@@ -28,7 +28,8 @@ class MergeRequestsGaugeGroups extends Component {
     }
 
     onApiData({ mergeRequests }) {
-        this.setState({ mergeRequestCount: mergeRequests.length });
+        const flattenArray = (arr) => [].concat.apply([], arr);
+        this.setState({ mergeRequestCount: flattenArray(mergeRequests).length });
     }
 
     render() {

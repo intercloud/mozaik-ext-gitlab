@@ -26,7 +26,8 @@ class MergeRequests extends Component {
     }
 
     onApiData({ groups, mergeRequests }) {
-        this.setState({ groups, mergeRequests: [].concat.apply([], mergeRequests) });
+        const flattenArray = (arr) => [].concat.apply([], arr);
+        this.setState({ groups, mergeRequests: flattenArray(mergeRequests) });
     }
 
     render() {
